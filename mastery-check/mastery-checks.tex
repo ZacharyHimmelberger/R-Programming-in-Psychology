@@ -1,0 +1,43 @@
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{csquotes}
+\usepackage[margin=1in]{geometry}
+
+\doublespacing
+
+\begin{document}
+
+\section{Class 1 - June 1}
+
+\subsection{Basics of R Syntax}
+
+\begin{enumerate}
+    \item Write a two line R script. 
+    Make the first line a comment and the second line a simple addition problem. 
+    Run the script to ensure that you get the expected result.
+    \item Add a third line to the script from above. 
+    This line should be another simple addition problem. 
+    Run each of the three lines individually, then again as an entire script. 
+    \item Explain why \verb|[1]| appears after running \verb|4+4|.
+    \item Create an object called height and assign your height in inches as the value. 
+    \item Convert the height object to centimeters ($1 \: in. \approx 2.54 \: cm$). 
+    Assign the result to the object \verb|height|.
+    \item Run \verb|height|. 
+    Why did this print a value to the screen, when running the above command did not?
+\end{enumerate}
+
+\subsection{R Markdown}
+
+\begin{enumerate}
+    \item Create a pdf in R Markdown. 
+    It should contain a brief explanation of your proposed final project idea. 
+    It should also contain two R chunks. 
+    The first chunk should assign a variable called \verb|normDist|, which contains 1000 numbers drawn from a normal distribution. 
+    The second chunk should contain a graph of those numbers. 
+\end{enumerate}
+
+\end{document}

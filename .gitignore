@@ -1,0 +1,13 @@
+# lecture-notes folder (REMOVE when ready to publish!!!!
+/lecture-notes
+
+# Mac file
+*.DS_Store
+
+# Intermediate .tex files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+
