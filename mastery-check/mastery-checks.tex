@@ -40,4 +40,81 @@
     The second chunk should contain a graph of those numbers. 
 \end{enumerate}
 
+\section{Class 2 - June 2}
+
+\subsection{Data Types, Vectors, and Subsets}
+
+I recommend that you try to answer the questions without entering anything into the computer. Then, go back through and double-check your responses. It is good practice to double-check, even if you are sure of the answer.
+
+\begin{enumerate}
+    \item For each of the following, give the class of the data. 
+    \begin{enumerate}
+    \singlespacing
+        \item c(1, 2, 3)
+        \item "Dr. H"
+        \item c(1, 2, 3, "Dr. H")
+        \item x \verb|<-| c(1, 2, 3, "Dr. H") \\ x[1:3]
+        \item True
+        \item mtcars["mpg"]
+        \item mtcars[["mpg"]]
+    \end{enumerate}
+    \doublespacing
+    \item Create a vector that contains the numbers 1 to 10. Complete the following and state the end result. 
+    \begin{itemize}
+    \singlespacing
+        \item multiply the vector by 2
+        \item add 4 to the vector
+        \item divide the vector by 10
+    \end{itemize}
+    \doublespacing
+    \item The \verb|mean()| function, unsurprisingly, gives you the mean of a set of values. For example, we can use \verb|mean(mtcars$mpg)| or \verb|mtcars[["mpg"]]| to get the mean \verb|mpg| of the \verb|mtcars| dataframe. Similarly, \verb|sd()| can be used to get the standard deviation of a numeric vector. Subset appropriately to get the following values from the mtcars dataframe: 
+    \begin{enumerate}
+    \singlespacing
+        \item the mean and standard deviation \verb|hp|
+        \item the mean and standard deviation \verb|mpg| for cars that have an mpg greater than 25
+        \item the mean and standard deviation \verb|wt| for cars that have a \verb|cyl| value of 4
+        \item the mean and standard deviation \verb|mpg| for cars that have a \verb|cyl| value of 4 and that have a \verb|wt| less than 3
+    \end{enumerate}
+    \doublespacing
+    \item Calculate the \verb|mpg| divided by the \verb|wt| for each car.
+    \item Use vectorized operations to calculate the mean of the vector
+    
+    \verb|c(21,14,26,18,22,31,26,36|. As a hint, the \verb|length()| function can be used to get the number of elements in a vector. I also recommend that you save each step along the way. Remember, the mean can be calculated using the formula:
+    \begin{equation*}
+        \bar{x} = \frac{1}{N}\sum_{i=1}^N x_i
+    \end{equation*}
+    \item Use vectorized operations to calculate the sum of squares, variance, and standard deviation for the same numbers. As a reminder, the formulas are as follows:
+    \begin{gather*}
+        SS = \sum_{i=1}^N (x_i - \bar{x})^2 \\
+        s^2 = \frac{1}{N-1}\sum_{i=1}^N (x_i - \bar{x})^2 \\
+        s = \sqrt{s^2}
+    \end{gather*}
+    \item Add a constant to each of the numbers in \verb|c(21,14,26,18,22,31,26,36)|, then calculate the mean, sum of squares, variance, and standard deviation again. Which numbers changed?
+    \item Create a dataframe with the following columns, in this order, from \verb|mtcars|: \verb|mpg, hp, wt, cyl|. How does this relate to the order that they were originally in?
+    \item Turn \verb|mtcars$cyl| into a factor. Multiply the resulting values by 2. What is the output? Why did you get that output?
+    \item Explain the difference between an atomic vector and a list. What is the benefit to using each?
+\end{enumerate}
+
+\section{Class 3 - June 3}
+
+\subsection{Loops}
+
+\begin{enumerate}
+    \item Print the multiplication table (from 1 to 10) for the number 13.
+    \item Given \verb|c(10,13,18,31)|, write a program to subtract the mean from each number using a for loop. 
+    \item Given \verb|c(18,62,41,5,16,62)|, write a for loop that squares each of the even numbers. (hint: the \verb|%%| operator will likely be useful)
+    \item Given \verb|c(1:50|, multiply each number by 6, then print all of the numbers divisible by both 2 and 3.
+\end{enumerate}
+
+\subsection{Control Flow}
+
+\begin{enumerate}
+    \item Imran Ghory wrote a classic problem to test whether a job applicant can program using if-else logic. It is called FizzBuzz, and goes like this: 
+    \begin{displayquote}
+    Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”.
+    \end{displayquote}
+    \item Add the positive integers together until you reach a number the is larger than 30. Print the largest integer that you added. 
+    \item Beginning with the number one, iterate using a while loop until you find the first number divisible by 3, 4, and 5. (hint: the \verb|!=| operator will likely be useful)
+\end{enumerate}
+
 \end{document}
