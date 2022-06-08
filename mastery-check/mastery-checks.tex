@@ -103,7 +103,7 @@ I recommend that you try to answer the questions without entering anything into 
     \item Print the multiplication table (from 1 to 10) for the number 13.
     \item Given \verb|c(10,13,18,31)|, write a program to subtract the mean from each number using a for loop. 
     \item Given \verb|c(18,62,41,5,16,62)|, write a for loop that squares each of the even numbers. (hint: the \verb|%%| operator will likely be useful)
-    \item Given \verb|c(1:50|, multiply each number by 6, then print all of the numbers divisible by both 2 and 3.
+    \item Given \verb|c(1:50|, multiply each number by 6, then print all of the numbers that are multiples of 5.
 \end{enumerate}
 
 \subsection{Control Flow}
@@ -115,6 +115,76 @@ I recommend that you try to answer the questions without entering anything into 
     \end{displayquote}
     \item Add the positive integers together until you reach a number the is larger than 30. Print the largest integer that you added. 
     \item Beginning with the number one, iterate using a while loop until you find the first number divisible by 3, 4, and 5. (hint: the \verb|!=| operator will likely be useful)
+\end{enumerate}
+
+\section{Class 4 - June 6}
+
+\subsection{Using Functions}
+
+\begin{enumerate}
+    \item Explain the three parts of a function, using the standard deviation function (\verb|sd()|) as an example. 
+    Use the help feature in R studio to help you.
+    \item Given \verb|x <- c(10, 25, 10, 12, 19, NA)|, calculate the mean of \verb|x| without including the \verb|NA| value. 
+    \item Load the \verb|psych| package. 
+    Run the following code to get descriptive statistics for a variable: \verb|psych::describe(x = mtcars$mpg)|.
+    \item The \verb|describeBy| function in the \verb|psych| package works similarly, except it allows the user to get descriptive statistics for each group in a factor (note: the function works for non-factors, as well, but it usually only makes sense to do this on categorical or grouping variables). 
+    The first argument is still \verb|x|, which takes the variable that you want to describe, but the second argument is \verb|group| which takes the factor. 
+    Try using \verb|describeBy| to get the descriptive statistics of \verb|hp| for each \verb|cyl|. 
+    \item The \verb|describeBy| function can also take multiple factors. 
+    They must be given as part of a list. 
+    Find the descriptive statistics of \verb|mpg| by \verb|cyl| and \verb|vs|.
+\end{enumerate}
+
+\subsection{Creating Functions}
+
+\begin{enumerate}
+    \item Create a function that takes a numeric vector as an argument and returns a new numeric vector containing only the even numbers. 
+    \item Create a function that takes two numeric vectors, compares the means of the two vectors, and returns the vector with the higher mean. For example, if the user provides \verb|a <- c(1,3,5| and \verb|b <- c(2,4,6|, your function should return \verb|b| because it has a higher mean. 
+    \item Re-create the \verb|mean| function. Remember, you should not name the function 'mean', as that would overwrite the base R function).
+    \item In a previous chapter, we used vectorized operations to solve for sum of squares, variance, and standard deviation. Create a function that solves for each of these values. 
+    \item Create a function that takes one argument, a numeric value, and returns all integers between 0 and that number (do not include 0 or that number, though). Make sure your function works for negative and positive integers. 
+    \item Create a function that takes two arguments, assume both are numeric, and returns the first number to power of the second number. For example, if given 5 and 7, your function should solve for $5^7$. 
+    \item Create a function to find the factorial of a given positive number. As a reminder, the factorial of a number is denoted by \verb|x!| and equal to that number multiplied by each positive integer from 1 to that number. For instance, $5!=5\cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120$.
+    \item Create a function that takes in a single sentence with no punctuation or special characters (e.g., "I am hungry") and returns the longest word in the sentence.
+    \item ATM passwords are allowed to be exactly four or exactly six digits and must contain only numbers. Create a function that accepts a single character as an argument, checks to see whether a given password is valid, and returns either \verb|True| or \verb|False|. For example, \verb|password.check("1,2,3,4")| and \verb|password.check("5,1,9,0,2,4")|should return \verb|True|, while \verb|password.check("1,2,3,4,5")| and \verb|password.check("a, 4, 8, 1")| should return \verb|False|.
+    \item Create a function that takes in a list of numbers and a single number as arguments and returns the probability of randomly selecting the single number from the list of numbers. 
+    Remember, the probability is given by \\
+    \verb|number of successful outcomes / total number of possible outcomes|. 
+    For example, given \verb|c(13,19,24,28,14,1,5,11,11,9)|, \verb|11| has a probability of .2 and \verb|28| has a probability of .1. 
+\end{enumerate}
+
+\section{Class 5 - June 8}
+
+\begin{enumerate}
+    \item Create a function that takes a string as an argument and returns the string with no capital letters or numbers (treat capital letters and lowercase letters as equivalent).
+    For example, \verb|'Hki3Kt9t9en1F2| should return \verb|'cat'|.
+    \item Create a function that takes a string as an argument and returns the string with no repeat characters.
+    For example, \verb|'Hhellllo Worrrlld!'| should return \verb|'Hello World!'|.
+\end{enumerate}
+
+\section{Class 6 - June 10}
+
+\begin{enumerate}
+    \item  We have seen in an earlier problem that the \verb|psych| package contains a helpful function for getting descriptive statistics, called \verb|describe|. 
+    Use the proper apply function to loop through two columns (\verb|qsec| and \verb|hp|) in \verb|mtcars| and return the results of \verb|describe| as a list.
+    \item Do the same thing as the first problem, but return the results in a simplified format. 
+    Notice that there are pros and cons to working with the return values of each function.
+    \item Complete the same as the above using \verb|map| and \verb|map_dfr|.
+    \item Take the dataframe that was returned in the previous problem and subset it to get the sample size, mean, median, and standard deviation for the variables. 
+    For added practice, make sure the values are returned in that order. 
+\end{enumerate}
+
+\section{Class 7 - June 13}
+
+For the following problems, use the \verb|mtcars| dataframe.
+
+\begin{enumerate}
+    \item Create a new dataframe that contains only cars that get more than 20 miles per gallon.
+    \item Create a new dataframe that contains miles per gallon and weight for only cars that get more than 25 miles per gallon. 
+    \item Grouping by the number of cylinders, calculate the mean and standard deviation for the weight of the cars.
+    \item Create a new dataframe that contains only cars that have a horsepower of 100 or greater. Assign the new dataframe the name \verb|df|. Add a new column to \verb|df| that is equal to the weight of the cars in pounds (hint: use \verb|wt*2000|). Name the column \verb|weight.lbs|.
+    \item Use the \verb|group_by| function to group by cylinder and obtain the mean and median weight in pounds. 
+    \item It is good to practice the \verb|dplyr| verbs in conjunction with one another. Try to combine \verb|select|, \verb|filter|, \verb|group_by|, and \verb|summarise_all| to get descriptive statistics for whichever variables you choose. 
 \end{enumerate}
 
 \end{document}
